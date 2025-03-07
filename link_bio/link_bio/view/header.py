@@ -28,7 +28,7 @@ rx.vstack(
                  padding_top="20px",size="2",color="#999999",padding_right="10em",),
             
         width="50em",
-        padding_top="50px",
+        padding_top="80px",
         margin_left="10em",
         align="center",
         height="100%",

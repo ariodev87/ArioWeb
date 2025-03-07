@@ -13,9 +13,12 @@ def navbar() -> rx.Component:
                 high_contrast=True,                
                 style={"margin": "10px","color":"white",}, # Usa CSS para margen personalizado
             ),
-           bg="#000d33",
+            position="fixed",
+            top="0",
+           bg="#0c1727",
            width="100%",
-           style={"box-shadow": "0px 0px 10px rgba(1, 1, 1, 1)"}
+           height="5em",
+           #style={"box-shadow": "0px 0px 10px rgba(1, 1, 1, 1)"}
         ),
         
     )

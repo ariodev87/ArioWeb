@@ -1,7 +1,8 @@
 import reflex as rx
 
 def footer_item() -> rx.Component:
-    return  rx.box(            
+    return  rx.box(    
+        rx.flex(        
             rx.heading(
                 "pepe",
                 #color_scheme='blue',
@@ -14,12 +15,13 @@ def footer_item() -> rx.Component:
                 rx.text("aaaaaaaaaaaaaaaaaaaa"),
                  rx.text("aaaaaaaaaaaaaaaaaaaa"),
                  ),
-                 width="50em",
+                 width="60em",
                  ),
                 
            bg="#000d33",
            width="100%",
-           heigth="50em",
+           heigth="60em",
            style={"box-shadow": "0px 0px 10px rgba(1, 1, 1, 1)"},
            # margin_left="2em",
+           ),
         ),
