@@ -1,44 +1,21 @@
 import reflex as rx
-from link_bio.component.footer import footer_item
-from link_bio.component.navbar import navbar
-from link_bio.component.button import button
-from link_bio.view.header import header
-from link_bio.view.headertext import headerText
+from link_bio.routes import Route
 from link_bio.style.style import Style
+from link_bio.pages.index import index
+from link_bio.pages.loading_page import login_page
 
 
 
-class State(rx.State):
-    pass
 
-def index()-> rx.Component:
-
-    return rx.box(
-        
-         navbar(),
-          
-         rx.vstack(
-                header(),
-                headerText("Proyectos"),
-                button("</>FastApi->Login Api","FastApi","braces",Style.BUTTON_BORDER_GREEN),
-                button("Web","Web","globe",Style.BUTTON_BORDER_RED),
-                button("Web","Web","globe",Style.NO_BUTTON_BORDER),
-                button("Web","Web","globe",Style.NO_BUTTON_BORDER),
-                spacing="3",
-                 align= "center",
-            ),
-             footer_item(),
-            width="100%",
-            allign="center",
-            height="50em",
-            background_color=Style.PRIMARI_COLOR,
-          
-    )
                  
 
+app = rx.App(
+         stylesheets=[
+        "https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Press+Start+2P&display=swap",
+        ]
+)
+
+app.add_page(index, route=Route.INDEX.value)
+app.add_page(login_page, route=Route.API.value)  # Ruta explícita
 
 
-app = rx.App()
-    
-app.add_page(index)
-app._compile()

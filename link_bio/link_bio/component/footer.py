@@ -1,27 +1,34 @@
 import reflex as rx
+from link_bio.style.style import Style
 
 def footer_item() -> rx.Component:
     return  rx.box(    
         rx.flex(        
             rx.heading(
-                "pepe",
+                 "<../ArioDev>",
+                font_family="Doto",
                 #color_scheme='blue',
                 size='5',
                 high_contrast=True,                
-                style={"margin": "30px","color":"white",}, # Usa CSS para margen personalizado
+                                
             ),
-            rx.box(
-            rx.vstack(
-                rx.text("aaaaaaaaaaaaaaaaaaaa"),
-                 rx.text("aaaaaaaaaaaaaaaaaaaa"),
-                 ),
-                 width="60em",
+            rx.text("Creado por Ariel Castro , Tecnologia Reflex"),
+            direction="column",  # Apila los elementos verticalmente
+            align_items="center",  # Centra los elementos horizontalmente
+            justify_content="center",
+            padding_bottom=20,
+
                  ),
                 
-           bg="#000d33",
+           bg=Style.SECUNDARY_COLOR,
            width="100%",
-           heigth="60em",
+           height="100%",
            style={"box-shadow": "0px 0px 10px rgba(1, 1, 1, 1)"},
-           # margin_left="2em",
+          
+            padding_top=30,
+           z_index="1000",
+           margin_top="2em",
+           bottom="0",
+           align="center",
            ),
-        ),
+        

@@ -2,8 +2,15 @@ import reflex as rx
 from link_bio.style.style import Style
 
 
-def button(text1:str,text2:str,iconTag:str,borderColor:str,) -> rx.Component:
-    return rx.button(
+def button(text1:str,
+           text2:str,
+           iconTag:str,
+           borderColor:str,
+           enlace:str,
+           isexternal:bool,
+              ) -> rx.Component:
+    return rx.link( rx.button(
+        
         rx.hstack(
             rx.icon(iconTag, size=16,margin_top="1em"),
             rx.vstack(
@@ -18,11 +25,14 @@ def button(text1:str,text2:str,iconTag:str,borderColor:str,) -> rx.Component:
         
         style={"_hover": {"background": "#00004d"},"border": borderColor},
         background_color=Style.BUTTON_COLOR.value,
-        width="25%",
+        width="25em",
         height="5em",
         radius="large",
         display="block",
         padding_lef="10em",
        
         #style={"font-size": "12px"}  # Reduce el tamaño de la fuente
+    ),
+    href=enlace,
+    is_external=isexternal,
     )
