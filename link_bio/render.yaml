@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: tu-app-reflex
+    name: ariodev
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: reflex run --env prod
+    startCommand: reflex run --env prod --backend-only
     envVars:
       - key: PYTHON_VERSION
         value: 3.13.2
