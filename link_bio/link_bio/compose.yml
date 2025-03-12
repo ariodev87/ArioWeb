@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"  # Puerto del backend
+    environment:
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+    command: ["redis-server", "--save", "60", "1"]
+
+volumes:
+  redis_data:
