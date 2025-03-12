@@ -3,7 +3,7 @@ services:
     name: ariodev
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: reflex run --env prod --backend-only
+    startCommand: python -m reflex run --env prod --backend-only
     envVars:
       - key: PYTHON_VERSION
         value: 3.13.2
