@@ -5,6 +5,7 @@ config = rx.Config(
     cors_allowed_origins=[
         "http://localhost:8000",
         "http://localhost:3000",
+        "http://localhost:3001",
         "https://arioweb-2.onrender.com",
                 ]
         )

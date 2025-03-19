@@ -7,22 +7,30 @@ from link_bio.view.header import header
 from link_bio.view.headertext import headerText
 from link_bio.style.style import Style
 from link_bio.routes import  Route
+from link_bio.state.page_state import IndexState
+
+
+      
+      
 
 
 @rx.page(
-        
-       route=Route.INDEX.value
+        #IndexState.GetTemperatura
+       route=Route.INDEX.value,
+       on_load=IndexState.GetInitialData
 )
 def index()-> rx.Component:
 
     return rx.box(
         
-         navbar(),
+         navbar(IndexState.icono,IndexState.temperatura),
           
          rx.vstack(
+               
                 header(),
                 
                 headerText("Proyectos"),
+                
                 button("</>FastApi->Login Api","FastApi","braces",Style.BUTTON_BORDER_GREEN,Route.API.value,False),
                 button("</IA>","@@Aplicación integrada con ChatGPT ","globe",Style.BUTTON_BORDER_RED,"https://github.com/ariodev87/",True),
                 button("Librería", "Aplicación que gestiona una librería","globe",Style.NO_BUTTON_BORDER,"https://pivigames.blog/",True),
