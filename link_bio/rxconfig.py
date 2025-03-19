@@ -10,6 +10,7 @@ config = rx.Config(
         "http://localhost:*",
         "https://arioweb-2.onrender.com",
         "https://ariodev.vercel.app/",
+        "https://ario-web-pied.vercel.app/",
         
                 ]
         )
