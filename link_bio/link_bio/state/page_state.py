@@ -1,11 +1,13 @@
 import reflex as rx
-from link_bio.api.api import SayHello,GetClima
+from link_bio.api.api import SayHello,GetClima,getuser_api
 
 class IndexState(rx.State):
     hellomsg: str = ""  # Inicializa la variable de estado con un string vacío
     temperatura:str=""
     clima:str=""
     icono:str=""
+    login:str=""
+    userlist:list
 
     async def callhello(self):
         self.hellomsg = await SayHello()  # Asigna el valor al atributo del estado
@@ -27,10 +29,18 @@ class IndexState(rx.State):
             else:
                 if self.clima=="Cubierto con lluvia escasa" or self.clima=="Cubierto con tormenta y lluvia escasa" or self.clima=="Nubes altas":
                     self.icono="/lluvia.png"
+   
+    async def getuserdata(self):
+        self.userlist= await getuser_api()
+
+
     
+ 
+        
         
     async def GetInitialData(self):
         await self.GetaClima()
         await self.GetTemperatura()
+        await self.getuserdata()
 
 

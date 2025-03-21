@@ -7,6 +7,12 @@ def navbar(imagen:str="/soleado.png",temperatura:str=0) -> rx.Component:
     return rx.hstack(
         rx.box(
             rx.hstack(
+            rx.image(src="/Designer(22).png",
+                     width="5em",
+                    height="auto",
+                    border_radius="25%",
+                    margin_top=10,
+                     ),
             rx.link(
             rx.text(
                 "<../ArioDev>",
@@ -14,7 +20,7 @@ def navbar(imagen:str="/soleado.png",temperatura:str=0) -> rx.Component:
                 font_size=30,
                 size='5',
                 high_contrast=True,                
-                style={"margin_left": "60px","margin_top": "25px","color":"white",}, # Usa CSS para margen personalizado
+                style={"margin_top": "25px","color":"white",}, # Usa CSS para margen personalizado
             ),
             href="/"
             ),
