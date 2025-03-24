@@ -8,6 +8,7 @@ class IndexState(rx.State):
     icono:str=""
     login:str=""
     userlist:list
+    primerusuario:str=""
 
     async def callhello(self):
         self.hellomsg = await SayHello()  # Asigna el valor al atributo del estado
@@ -32,6 +33,12 @@ class IndexState(rx.State):
    
     async def getuserdata(self):
         self.userlist= await getuser_api()
+        if len(self.userlist)>0:
+            for item in self.userlist:
+                self.primerusuario=item
+        self.primerusuario="lista vacia"        
+    
+        
 
 
     

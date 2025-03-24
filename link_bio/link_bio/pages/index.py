@@ -30,7 +30,7 @@ def index()-> rx.Component:
                 header(),
                 
                 headerText("Proyectos"),
-                
+                rx.text(IndexState.primerusuario),
                 button("</>FastApi->Login Api","FastApi","braces",Style.BUTTON_BORDER_GREEN,Route.API.value,False),
                 button("</IA>","@@Aplicación integrada con ChatGPT ","globe",Style.BUTTON_BORDER_RED,"https://github.com/ariodev87/",True),
                 button("Librería", "Aplicación que gestiona una librería","globe",Style.NO_BUTTON_BORDER,"https://pivigames.blog/",True),
