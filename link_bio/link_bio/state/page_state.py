@@ -33,10 +33,12 @@ class IndexState(rx.State):
    
     async def getuserdata(self):
         self.userlist= await getuser_api()
-        if len(self.userlist)>0:
+        if self.userlist is not None and len(self.userlist)>0:
             for item in self.userlist:
-                self.primerusuario=item
-        self.primerusuario="lista vacia"        
+                self.primerusuario=str(item["user"])
+        else:                
+         self.primerusuario="Lista Vacia"
+         self.userlist = []          
     
         
 
